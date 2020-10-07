@@ -38,7 +38,7 @@ public class Reader {
 		return obj;
 	}
     
-    public static void convertjson(String file) {
+ /*   public static void convertjson(String file) {
     	JSONObject obj = (JSONObject) readjson(file);
     	Long rows = (Long) obj.get("rows");
     	Long cols = (Long) obj.get("cols");
@@ -118,6 +118,6 @@ public class Reader {
     	return id_mov_array;
     	
     	
-    }
+    }*/
 		
 }
