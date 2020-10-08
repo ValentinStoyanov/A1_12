@@ -9,12 +9,14 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import com.google.gson.Gson;
  
 
 public class Reader {
 	
     
-    public static Object readjson(String file) {
+    public static Maze importjson(String file) {
 		// Method that reads a json file
 
 		// Parser
@@ -35,7 +37,11 @@ public class Reader {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return obj;
+		
+		Maze maze = new Gson().fromJson(obj.toString(), Maze.class);
+		
+		return maze;
+		
 	}
     
  /*   public static void convertjson(String file) {

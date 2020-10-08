@@ -15,14 +15,8 @@ public class App
     {
         System.out.println( "App starting" );
         
-        	 String json =  Reader.readjson("puzzle_10x10.json").toString();
-
-            // Now do the magic.
-           Maze maze = new Gson().fromJson(json, Maze.class);
-
-            // Show it.
-            System.out.println(maze.getCells());
+        Maze maze = Reader.importjson("puzzle_10x10.json");
             
-            
+           System.out.println(maze.toString());
     }
 }
