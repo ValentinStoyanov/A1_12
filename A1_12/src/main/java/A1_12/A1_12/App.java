@@ -15,7 +15,7 @@ public class App
     {
         System.out.println("-----------"+ " App starting "+"----------" +"\n\n");
         
-        Maze maze = Reader.importjson("puzzle_15x20.json");
+        Maze_drawer.draw_maze("puzzle_15x20.json");
        
         
     }

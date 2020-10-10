@@ -12,7 +12,11 @@ public class Coordinate {
 
 	}
 
-
+	public String printnei() {
+		
+		return neighbors[0] +" "+neighbors[1]+" "+neighbors[2]+" "+neighbors[3];
+	}
+	
 	public int getValue() {
 		return value;
 	}
