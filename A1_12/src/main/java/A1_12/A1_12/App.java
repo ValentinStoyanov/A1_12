@@ -13,10 +13,10 @@ public class App
 {
     public static void main( String[] args ) throws FileNotFoundException
     {
-        System.out.println( "App starting" );
+        System.out.println("-----------"+ " App starting "+"----------" +"\n\n");
         
-        Maze maze = Reader.importjson("puzzle_10x10.json");
-            
-           System.out.println(maze.toString());
+        Maze maze = Reader.importjson("puzzle_15x20.json");
+       
+        
     }
 }
