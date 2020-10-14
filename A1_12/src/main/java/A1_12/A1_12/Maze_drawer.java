@@ -14,9 +14,8 @@ public class Maze_drawer {
 	
 	
 	
-	public static void draw_maze (String json_name) {
+	public static void draw_maze(Maze maze) {
 		
-		Maze maze = Reader.importjson(json_name);
 		
 		JFrame frame = new JFrame("GridLayout");
 		JPanel p1 =  new JPanel(new GridLayout(maze.getRows(),maze.getCols()));
@@ -73,5 +72,6 @@ public class Maze_drawer {
 		return walls;
 		
 	}
+
 
 }
