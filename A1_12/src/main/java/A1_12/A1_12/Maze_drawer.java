@@ -2,11 +2,14 @@ package A1_12.A1_12;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Graphics2D;
 import java.awt.GridLayout;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.HashMap;
 
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -44,7 +47,8 @@ public class Maze_drawer {
 		frame.pack();
 		
 		frame.setVisible(true);
-		
+		saveImage(frame);
+
 	}
 	
 	
@@ -71,6 +75,20 @@ public class Maze_drawer {
 		
 		return walls;
 		
+	}
+	
+	private static void saveImage(JFrame frame){
+		 try
+	        {
+	            BufferedImage image = new BufferedImage(frame.getWidth(), frame.getHeight(), BufferedImage.TYPE_INT_RGB);
+	            Graphics2D graphics2D = image.createGraphics();
+	            frame.paint(graphics2D);
+	            ImageIO.write(image,"jpeg", new File("maze.jpeg"));
+	        }
+	        catch(Exception exception)
+	        {
+	            //code
+	        }
 	}
 
 

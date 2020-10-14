@@ -1,10 +1,6 @@
 package A1_12.A1_12;
 
 import java.io.FileNotFoundException;
-import java.util.Collection;
-
-import com.google.gson.Gson;
-
 /**
  * Hello world!
  *
@@ -15,17 +11,11 @@ public class App
     {
         System.out.println("-----------"+ " App starting "+"----------" +"\n\n");
         
-        Maze maze = Reader.importjson("puzzle_50x60.json");
+        Maze maze = Reader.importjson("puzzle_90x100.json");
         
         Maze_drawer.draw_maze(maze);
         
         Writter.w_file(maze, "prueba.json");
-        
-        
-    		
-        
-        
-       
-        
+ 
     }
 }
