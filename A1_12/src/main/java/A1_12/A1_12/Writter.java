@@ -17,8 +17,6 @@ public class Writter {
 		Gson g = new Gson();
 		
 		String jsonInString = g.toJson(maze);
-		
-		
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		JsonParser jp = new JsonParser();
 		JsonElement je = jp.parse(jsonInString);
