@@ -7,13 +7,11 @@ public class Coordinate {
 	int value;
 	boolean[]  neighbors;
 	
-	
 	public Coordinate() {
 
 	}
 
 	public String printnei() {
-		
 		return neighbors[0] +" "+neighbors[1]+" "+neighbors[2]+" "+neighbors[3];
 	}
 	
@@ -35,12 +33,5 @@ public class Coordinate {
 	public void setNeighbors(boolean[] neighbors) {
 		this.neighbors = neighbors;
 	}
-
-
-
-
-	
-	
-	
 
 }

@@ -54,5 +54,7 @@ public class Maze_operator {
 		return "(" + n + ", " + "(" + i + " ," + j + "), " + coste + "),";
 
 	}
+	
+	
 
 }

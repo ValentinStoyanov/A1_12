@@ -82,6 +82,11 @@ public class Node {
 	public void setEstrategia(String estrategia) {
 		this.estrategia = estrategia;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "[ID=" + ID + "] [COST=" + cost + "; ID_STATE=" + state + "; ID_PARENT=" + parent + "; ACTION=" + action
+				+ "; DEPTH=" + depth + "; HEURISTIC=" + h + "VALUE=" + f;	
+	}
 	
 }
