@@ -54,7 +54,13 @@ public class Maze_operator {
 		return "(" + n + ", " + "(" + i + " ," + j + "), " + coste + "),";
 
 	}
-	
-	
+
+	public static boolean isGoal(Maze state, Node goal) {
+		if(state.equals(goal.getState())){
+			return true;
+		}else {
+			return false;
+		}
+	}
 
 }
