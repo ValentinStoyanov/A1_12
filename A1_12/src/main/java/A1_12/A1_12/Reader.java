@@ -23,7 +23,7 @@ public class Reader {
 		JSONParser jsonParser = new JSONParser();
 		Object obj = null;
 
-		try (FileReader reader = new FileReader(file)) { // Name of the json file with the cube
+		try (FileReader reader = new FileReader(file)) { // Name of the json file with the maze
 			// Read JSON file
 			obj = jsonParser.parse(reader);
 

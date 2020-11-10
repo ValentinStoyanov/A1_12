@@ -1,6 +1,8 @@
 package A1_12.A1_12;
 
-public class Node {
+import java.util.Comparator;
+
+public class Node implements Comparable<Node> {
 	private int ID;
 	private Node parent;
 	private Maze state;
@@ -82,6 +84,23 @@ public class Node {
 	public void setEstrategia(String estrategia) {
 		this.estrategia = estrategia;
 	}
+	
+	
+	public int compareTo(Node node) {
+		
+		if (node.getF() < this.getF()) {
+			return 1;
+		}else {
+			if(node.getF() > this.getF()) {
+				return -1;
+			}else if(node.getID() < this.getID()){
+				return 1;
+			}else {
+				return -1;
+			}
+		}
+	}
+	
 
 	@Override
 	public String toString() {

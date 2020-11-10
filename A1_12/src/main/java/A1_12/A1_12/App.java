@@ -11,20 +11,6 @@ public class App
     {
         System.out.println("-----------"+ " App starting "+"----------" +"\n\n");
         
-        Maze maze = Reader.importjson("sucesores_10x10_maze.json");
-        
-        
-        System.out.println(
-        
-        Maze_operator.get_succesors(0, 6, maze.getCells())
-        
-        );
-        
-        //Maze_drawer.draw_maze(maze);
-        
-        
-        
-        //Writter.w_file(maze, "prueba.json");
- 
+        Frontier.testpriorityqueue(); 
     }
 }
