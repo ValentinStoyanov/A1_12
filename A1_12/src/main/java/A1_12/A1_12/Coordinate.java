@@ -1,6 +1,6 @@
 package A1_12.A1_12;
 
-import java.util.ArrayList;
+
 
 public class Coordinate {
 	
@@ -12,7 +12,7 @@ public class Coordinate {
 	}
 
 	public String printnei() {
-		return neighbors[0] +" "+neighbors[1]+" "+neighbors[2]+" "+neighbors[3];
+		return  "value:  "+ value +"  Neis: "+ neighbors[0] +" "+neighbors[1]+" "+neighbors[2]+" "+neighbors[3];
 	}
 	
 	public int getValue() {

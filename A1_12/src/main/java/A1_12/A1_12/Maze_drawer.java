@@ -24,6 +24,9 @@ public class Maze_drawer {
       for (int j = 0; j < maze.getCols(); j++) {
 
         String index = "(" + i + ", " + j + ")";
+        
+        //System.out.println("(" + i + ", " + j + ")");
+		//System.out.println(maze.getCells().get("(" + i + ", " + j + ")").printnei());
 
         check_incosistency(i, j, maze.getCells());
 
@@ -34,7 +37,8 @@ public class Maze_drawer {
             BorderFactory.createMatteBorder(borders[0], borders[3], borders[2], borders[1], Color.BLACK));
         // NORTE, OESTE,SUR,ESTE
         p1.add(p);
-
+        //N,E,S,O
+        //0,1,2,3
       }
     }
 
@@ -44,7 +48,7 @@ public class Maze_drawer {
 
     frame.setVisible(true);
     
-    saveImage(frame);
+    //saveImage(frame);
 
   }
   
@@ -83,7 +87,7 @@ public class Maze_drawer {
       walls[3] = 1;
     }
 
-    // System.out.println(walls[0]+" "+walls[1]+" "+walls[2]+" "+walls[3]);
+    //System.out.println("Borders: "+walls[0]+" "+walls[1]+" "+walls[2]+" "+walls[3]);
 
     return walls;
 

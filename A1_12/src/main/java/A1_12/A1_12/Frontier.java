@@ -7,7 +7,7 @@ public class Frontier {
 
 
 	
-	public static void testpriorityqueue() {
+	/*public static void testpriorityqueue() {
 		
 		long startTime = System.nanoTime();
 		
@@ -16,7 +16,7 @@ public class Frontier {
 		
 		for (int i = 0; i < 10000000;i++) {
 		
-		Node node= new Node((int)Math.random()*10000, null, maze,  (int)Math.random()*3, "S",  (int)Math.random()*6,  2.2,  2.2,"A*");
+		Node node= new Node((int)Math.random()*10000, null,1,1, maze.getCells().,  (int)Math.random()*3, "S",  (int)Math.random()*6,  2.2,  2.2,"A*");
 		pq.offer(node);
 		}
 		
@@ -27,6 +27,6 @@ public class Frontier {
 		System.out.println(duration);
 		
 		
-	}
+	}*/
 
 }
