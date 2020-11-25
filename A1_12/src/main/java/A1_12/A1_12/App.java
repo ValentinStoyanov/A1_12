@@ -8,9 +8,9 @@ public class App
 {
     public static void main( String[] args ) throws IOException, ParseException {
                 
-        //Problem problema = Reader.importjson1("problema_5x5.json");
+        Problem problema = Reader.importjson1("problema_5x5.json");
         
-        Maze maze = Reader.importjson("problema_5x5_maze.json");
+        Maze_drawer.draw_maze(problema.getMaze());
         
         //Maze_drawer.draw_maze(maze);
         
@@ -22,7 +22,7 @@ public class App
         }*/
         
         
-        Maze_drawer.draw_maze(maze);
+        
         
     }
 }
