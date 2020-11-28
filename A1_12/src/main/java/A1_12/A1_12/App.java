@@ -8,18 +8,13 @@ public class App
 {
     public static void main( String[] args ) throws IOException, ParseException {
                 
-        Problem problema = Reader.importjson1("problema_5x5.json");
+        Problem problema = Reader.importjson1("problema_25x25.json");
         
-        Maze_drawer.draw_maze(problema.getMaze());
+        Maze_resolver.busqueda ( problema, 10000 , "BREADTH" );
         
-        //Maze_drawer.draw_maze(maze);
+     
         
-      /*  for(int i = 0; i < 5; i++) {
-        	for(int j = 0; j < 5; j++) {
-        		System.out.println("(" + i + ", " + j + ")");
-        		System.out.println(maze.getCells().get("(" + i + ", " + j + ")").printnei());
-        	}
-        }*/
+     
         
         
         

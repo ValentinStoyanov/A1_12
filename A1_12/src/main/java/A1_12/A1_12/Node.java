@@ -19,8 +19,8 @@ public class Node implements Comparable<Node> {
 
 	}
 
-	public Node(int iD, Node parent, int row, int col, Coordinate state, int cost, String action, int depth, double f,
-			double h, String estrategia) {
+	public Node(int iD, Node parent, int row, int col, Coordinate state, int cost, String action, int depth,
+			 String estrategia) {
 		super();
 		ID = iD;
 		this.parent = parent;
@@ -30,8 +30,7 @@ public class Node implements Comparable<Node> {
 		this.cost = cost;
 		this.action = action;
 		this.depth = depth;
-		this.f = f;
-		this.h = h;
+
 		this.estrategia = estrategia;
 	}
 
@@ -134,13 +133,13 @@ public class Node implements Comparable<Node> {
 		} else if (node.getRow() > this.getRow()) {
 			return -1;
 		} else if (node.getCol() < this.getCol()) {
-			return 1;
+			return -1;
 		} else if (node.getCol() > this.getCol()) {
-			return -1;
-		} else if (node.getID() < this.getID()) {
 			return 1;
-		} else {
+		} else if (node.getID() < this.getID()) {
 			return -1;
+		} else {
+			return 1;
 		}
 
 	}
