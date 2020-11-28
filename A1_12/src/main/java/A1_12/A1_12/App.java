@@ -10,7 +10,7 @@ public class App
                 
         Problem problema = Reader.importjson1("problema_25x25.json");
         
-        Maze_resolver.busqueda ( problema, 10000 , "BREADTH" );
+        Maze_resolver.busqueda ( problema, 1000 , "A" );
         
      
         

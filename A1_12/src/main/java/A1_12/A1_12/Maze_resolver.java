@@ -116,7 +116,7 @@ public class Maze_resolver {
 	
 	public static ArrayList<Node> get_succesors (Problem problema, Node nodo,String estrategia) {
 		
-		ArrayList<Node> succ = new ArrayList();
+		ArrayList<Node> succ = new ArrayList<Node>();
 		
 		int id = nodo.getID();
 		
@@ -142,6 +142,8 @@ public class Maze_resolver {
 					"N",
 					(nodo.getDepth()+1),
 					estrategia);
+			
+			
 			
 			succ.add(norte);
 			

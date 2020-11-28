@@ -133,13 +133,13 @@ public class Node implements Comparable<Node> {
 		} else if (node.getRow() > this.getRow()) {
 			return -1;
 		} else if (node.getCol() < this.getCol()) {
-			return -1;
+			return 1;
 		} else if (node.getCol() > this.getCol()) {
-			return 1;
-		} else if (node.getID() < this.getID()) {
 			return -1;
-		} else {
+		} else if (node.getID() < this.getID()) {
 			return 1;
+		} else {
+			return -1;
 		}
 
 	}
