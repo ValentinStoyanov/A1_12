@@ -22,6 +22,8 @@ public class Maze_resolver {
 		
 		n_inicial.setF(calcular_f (estrategia, n_inicial));
 		
+		int node_id = 0;
+		
 		//Insertar nodo inicial 
 		frontera.offer(n_inicial);
 		
@@ -46,6 +48,8 @@ public class Maze_resolver {
 				ArrayList<Node> nodos_hijos =expandir_nodo (problema, nodo,estrategia);
 				
 				for (int i = 0; i < nodos_hijos.size();i++) {
+					node_id = node_id +1;
+					nodos_hijos.get(i).setID(node_id);
 					frontera.add(nodos_hijos.get(i));
 				}
 				
@@ -69,7 +73,10 @@ public class Maze_resolver {
 		
 		if(nodo.getParent()!=null) {
 			 return_parent (nodo.getParent());
-			 System.out.println("ID:"+nodo.getID()+" ROW:"+nodo.getRow()+" COL:"+nodo.getCol()+" COSTE: "+nodo.getCost());
+			 
+			 //[id][cost,state,father_id,action,depth,h,value]
+			 
+			 System.out.println("["+nodo.getID()+"]"+"["+nodo.getCost()+",("+nodo.getRow()+","+nodo.getCol()+"),"+nodo.getParent().getID()+","+nodo.getAction()+","+nodo.getDepth()+","+nodo.getH()+","+nodo.getF()+"]");
 		}
 		
 	}
@@ -133,7 +140,7 @@ public class Maze_resolver {
 			
 			Coordinate state = problema.getMaze().getCells().get("(" + x1 + ", " + nodo.getCol() + ")");
 			
-			Node norte = new Node(++id,
+			Node norte = new Node(0,
 					nodo,
 					x1,
 					nodo.getCol(),
@@ -159,7 +166,7 @@ public class Maze_resolver {
 			
 			Coordinate state = problema.getMaze().getCells().get("(" + nodo.getRow() + ", " + x1 + ")");
 			
-			Node norte = new Node(++id,
+			Node norte = new Node(0,
 					nodo,
 					nodo.getRow(),
 					x1,
@@ -180,7 +187,7 @@ public class Maze_resolver {
 			
 			Coordinate state = problema.getMaze().getCells().get("(" + x1 + ", " + nodo.getCol() + ")");
 			
-			Node norte = new Node(++id,
+			Node norte = new Node(0,
 					nodo,
 					x1,
 					nodo.getCol(),
@@ -201,7 +208,7 @@ public class Maze_resolver {
 			
 			Coordinate state = problema.getMaze().getCells().get("(" + nodo.getRow() + ", " + x1 + ")");
 			
-			Node norte = new Node(++id,
+			Node norte = new Node(0,
 					nodo,
 					nodo.getRow(),
 					x1,
@@ -222,7 +229,7 @@ public class Maze_resolver {
 	
 	public static double  calcular_f (String estrategia, Node nodo) {
 		
-		double f_value = 0;
+		double f_value = 0.0;
 		
 		switch (estrategia) {
 		
@@ -230,7 +237,7 @@ public class Maze_resolver {
 			f_value = nodo.getDepth();
 			break;
 		case "DEPTH":
-			f_value = 1/(nodo.getDepth()+1);
+			f_value = 1.0/(nodo.getDepth()+1.0);
 			break;
 		case "UNIFORM":
 			f_value = nodo.getCost();
