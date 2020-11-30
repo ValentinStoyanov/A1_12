@@ -35,6 +35,8 @@ public class Maze_resolver {
 			
 			if(isGoal(problema, nodo)) {
 				solucion = true;
+				System.out.println("["+n_inicial.getID()+"]"+"["+n_inicial.getCost()+",("+n_inicial.getRow()+","+n_inicial.getCol()+"),"+0+","+n_inicial.getAction()+","+n_inicial.getDepth()+","+n_inicial.getH()+","+n_inicial.getF()+"]");
+
 				return_parent (nodo);
 				
 				
@@ -47,10 +49,10 @@ public class Maze_resolver {
 				
 				ArrayList<Node> nodos_hijos =expandir_nodo (problema, nodo,estrategia);
 				
-				for (int i = 0; i < nodos_hijos.size();i++) {
-					node_id = node_id +1;
-					nodos_hijos.get(i).setID(node_id);
-					frontera.add(nodos_hijos.get(i));
+				for(Node n :nodos_hijos) {
+					node_id++;
+					n.setID(node_id);
+					frontera.offer(n);
 				}
 				
 				
@@ -87,9 +89,9 @@ public class Maze_resolver {
 		
 		for (int i = 0; i < visitados.size();i++) {
 			if(visitados.get(i).getRow()==nodo.getRow()  &&  visitados.get(i).getCol()==nodo.getCol()) {
-				if(visitados.get(i).getCost()<nodo.getCost()) {
+				//if(visitados.get(i).getCost()<nodo.getCost()) {
 					visited = true;
-				}
+				//}
 				
 			}
 		}
@@ -125,7 +127,6 @@ public class Maze_resolver {
 		
 		ArrayList<Node> succ = new ArrayList<Node>();
 		
-		int id = nodo.getID();
 		
 		int x1;
 		
