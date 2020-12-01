@@ -2,7 +2,6 @@ package A1_12.A1_12;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class Maze {
 	

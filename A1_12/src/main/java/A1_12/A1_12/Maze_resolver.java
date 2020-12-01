@@ -1,17 +1,22 @@
 package A1_12.A1_12;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 
 public class Maze_resolver {
 	
 	
-	public static void busqueda (Problem problema, int profundidad, String estrategia) {
+	public static void busqueda (Problem problema, int profundidad, String estrategia) throws IOException {
 		
 		PriorityQueue<Node> frontera =  new PriorityQueue<Node>();
 		ArrayList<Node> visitados = new ArrayList();
 		
 		int[] inicial = problema.getInital();
+		
+		Node n_final = new Node();
 		
 		Coordinate coor_ini = problema.getMaze().getCells().get("(" + inicial[0] + ", " + inicial[1] + ")");
 		
@@ -35,9 +40,7 @@ public class Maze_resolver {
 			
 			if(isGoal(problema, nodo)) {
 				solucion = true;
-				System.out.println("["+n_inicial.getID()+"]"+"["+n_inicial.getCost()+",("+n_inicial.getRow()+","+n_inicial.getCol()+"),"+0+","+n_inicial.getAction()+","+n_inicial.getDepth()+","+n_inicial.getH()+","+n_inicial.getF()+"]");
-
-				return_parent (nodo);
+				n_final = nodo;
 				
 				
 				
@@ -61,7 +64,17 @@ public class Maze_resolver {
 		
 		
 		if(solucion == true) {
-			System.out.println("Solucion encontrada");		
+			
+			System.out.println("Solucion encontrada");
+			
+			BufferedWriter writer = new BufferedWriter(new FileWriter("solucion.txt", false));
+			
+		    writer.append("[id][cost,state,father_id,action,depth,h,value]"+"\n"+"["+n_inicial.getID()+"]"+"["+n_inicial.getCost()+",("+n_inicial.getRow()+","+n_inicial.getCol()+"),"+0+","+n_inicial.getAction()+","+n_inicial.getDepth()+","+n_inicial.getH()+","+n_inicial.getF()+"]"+"\n");
+		    			
+			return_parent (n_final,writer);
+		    
+		    writer.close();
+			
 			
 			
 		}else {
@@ -71,14 +84,16 @@ public class Maze_resolver {
 		
 	}
 	
-	public static void return_parent (Node nodo) {
+	public static void return_parent (Node nodo,BufferedWriter writer) throws IOException {
 		
 		if(nodo.getParent()!=null) {
-			 return_parent (nodo.getParent());
+			 return_parent (nodo.getParent(),writer);
 			 
 			 //[id][cost,state,father_id,action,depth,h,value]
 			 
-			 System.out.println("["+nodo.getID()+"]"+"["+nodo.getCost()+",("+nodo.getRow()+","+nodo.getCol()+"),"+nodo.getParent().getID()+","+nodo.getAction()+","+nodo.getDepth()+","+nodo.getH()+","+nodo.getF()+"]");
+			 writer.append("["+nodo.getID()+"]"+"["+nodo.getCost()+",("+nodo.getRow()+","+nodo.getCol()+"),"+nodo.getParent().getID()+","+nodo.getAction()+","+nodo.getDepth()+","+nodo.getH()+","+nodo.getF()+"]"+"\n");
+		
+			 
 		}
 		
 	}

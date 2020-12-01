@@ -48,7 +48,7 @@ public class Maze_drawer {
 
     frame.setVisible(true);
     
-    //saveImage(frame);
+    saveImage(frame);
 
   }
   
