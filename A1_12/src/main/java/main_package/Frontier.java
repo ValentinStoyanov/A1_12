@@ -1,4 +1,4 @@
-package A1_12.A1_12;
+package main_package;
 
 import java.util.PriorityQueue;
 
